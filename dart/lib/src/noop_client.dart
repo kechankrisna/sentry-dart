@@ -22,7 +22,7 @@ class NoOpClient implements Client {
   void close() {}
 
   @override
-  Future<Response> delete(url, {Map<String, String> headers}) => _response;
+  Future<Response> delete(Uri url, {Map<String, String> headers, Object body, Encoding encoding}) => _response;
 
   @override
   Future<Response> get(url, {Map<String, String> headers}) => _response;
@@ -53,4 +53,6 @@ class NoOpClient implements Client {
 
   @override
   Future<StreamedResponse> send(BaseRequest request) => _streamedResponse;
+
+  
 }
